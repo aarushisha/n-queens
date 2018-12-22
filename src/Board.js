@@ -157,7 +157,6 @@
       var startingColIndex = 0;
       for (let i = startingColIndex; i < rows.length; i++) {
         var start = this._getFirstRowColumnIndexForMajorDiagonalOn(startingRowIndex,i);
-        // console.log("starting column: ", start);
         if (this.hasMajorDiagonalConflictAt(start)) {
           containsMajorDiagonalConflicts = true;
         }
@@ -197,7 +196,6 @@
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
       var rows = this.rows();
-      console.log(rows);
       var containsMinorDiagonalConflicts = false; 
       var startingColIndex = 0;
       var startingRowIndex = rows.length -1;
@@ -210,7 +208,6 @@
       }
       for (let c = 0; c < rows[0].length; c++) {
         var start2 = this._getFirstRowColumnIndexForMinorDiagonalOn(c, startingRowIndex);
-        var result = this.hasMinorDiagonalConflictAt(start2);   
         if (this.hasMinorDiagonalConflictAt(start2)) {
           return true;
         }
