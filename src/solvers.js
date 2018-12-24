@@ -97,10 +97,11 @@ window.findNQueensSolution = function(n) {
     
   };
 
-  if (n === 0) {
-    console.log('n === 0');
-    solution = [];
-  } else if ( n === 2 || n === 3) {
+  // if (n === 0) {
+  //   console.log('n === 0');
+  //   solution = [];
+  // } else 
+  if ( n === 2 || n === 3) {
     solution = board.rows();
     console.log('solution if empty board when n === 2 or n === 3: ', solution);
   } else {

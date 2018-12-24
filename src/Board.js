@@ -109,6 +109,9 @@
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
       var rows = this.rows();
+      if (rows.length === 0) {
+        return false;
+      }
       let count = 0;
       for (let i = 0; i < rows.length; i++) {
         if (rows[i][colIndex] !== 0) {
@@ -121,6 +124,9 @@
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
       var rows = this.rows();
+      if (rows.length === 0) {
+        return false;
+      }
       for (let i = 0; i < rows[0].length; i++) {
         if (this.hasColConflictAt(i)) {
           return true;
@@ -138,6 +144,9 @@
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
       var count = 0;
       var rows = this.rows();
+      if (rows.length === 0) {
+        return false;
+      }
       var rowColRelationship = majorDiagonalColumnIndexAtFirstRow;
       var row = 0;
       for (row = 0; row < rows.length; row++ ) {
@@ -152,6 +161,9 @@
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
       var rows = this.rows();
+      if (rows.length === 0) {
+        return false;
+      }
       var containsMajorDiagonalConflicts = false;
       var startingRowIndex = 0;
       var startingColIndex = 0;
@@ -179,6 +191,9 @@
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
       var count = 0;
       var rows = this.rows();
+      if (rows.length === 0) {
+        return false;
+      }
       var rowColRelationship = minorDiagonalColumnIndexAtFirstRow;
       var row = 0;
       for (let row=rows.length - 1; row>=0 ; row --)
@@ -196,6 +211,9 @@
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
       var rows = this.rows();
+      if (rows.length === 0) {
+        return false;
+      }
       var containsMinorDiagonalConflicts = false; 
       var startingColIndex = 0;
       var startingRowIndex = rows.length -1;
